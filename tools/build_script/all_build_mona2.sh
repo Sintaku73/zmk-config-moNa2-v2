@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+west build -p -d build/left -b "seeeduino_xiao_ble" -- -DZMK_CONFIG="/workspaces/zmk-config/config" -DSHIELD="mona2_l rgbled_adapter" -DZMK_EXTRA_MODULES="/workspaces/zmk-config;/workspaces/zmk-modules/zmk-pmw3610-driver-badjeff;/workspaces/zmk-modules/zmk-rgbled-widget;/workspaces/zmk-modules/zmk-input-processor-keybind" && \
+west build -p -d build/right -b "seeeduino_xiao_ble" -S "studio-rpc-usb-uart" -- -DZMK_CONFIG="/workspaces/zmk-config/config" -DSHIELD="mona2_r rgbled_adapter" -DZMK_EXTRA_MODULES="/workspaces/zmk-config;/workspaces/zmk-modules/zmk-pmw3610-driver-badjeff;/workspaces/zmk-modules/zmk-rgbled-widget;/workspaces/zmk-modules/zmk-input-processor-keybind" && \
+west build -p -d build/reset -b "seeeduino_xiao_ble" -- -DZMK_CONFIG="/workspaces/zmk-config/config" -DSHIELD="settings_reset" -DZMK_EXTRA_MODULES="/workspaces/zmk-config;/workspaces/zmk-modules/zmk-pmw3610-driver-badjeff;/workspaces/zmk-modules/zmk-rgbled-widget;/workspaces/zmk-modules/zmk-input-processor-keybind"
